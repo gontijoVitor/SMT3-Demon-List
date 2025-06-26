@@ -1,24 +1,66 @@
-body{
-    background-image: url("../img/playstation-wallpapers-persona-5-royal-desktop-wallpaper-01-ps4-27mar20-en-us.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
+/* Fundo com imagem borrada */
+body {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  min-height: 100vh;
+  color: aliceblue;
+  font-family: sans-serif;
+  background: transparent;
 }
 
-.mainTable{
-    background-color: aliceblue;
+.background-blur {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: brightness(60%);
+  z-index: -1;
 }
 
-.botao{
-    background-color: #ee1c24;
-    color: aliceblue;
-    border-radius: 15px;
-    border: none;
-    height: 35px;
-    width: 100%;
-    font-size: larger;
+/* Estilo das áreas principais (filtros e tabela) */
+.mainTable {
+  background-color: rgba(53, 53, 53, 0.95); /* leve transparência */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  position: relative;
+  z-index: 1;
 }
 
-.pictureAdjust{
-    height: 15%;
-    width: 15%;
+/* Botão de filtro */
+.botao {
+  background-color: #1d0573;
+  color: aliceblue;
+  border-radius: 15px;
+  border: none;
+  height: 35px;
+  width: 100%;
+  font-size: larger;
+}
+
+/* Imagens da tabela */
+.pictureAdjust {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Responsividade extra (opcional) */
+@media (max-width: 768px) {
+  .mainTable {
+    width: 95% !important;
+  }
+
+  .pictureAdjust {
+    height: 40px;
+  }
+
+  .botao {
+    font-size: medium;
+  }
 }
